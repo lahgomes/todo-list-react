@@ -1,4 +1,6 @@
 import React from 'react'
+import Title from '../../ui/Title';
+import Input from '../../ui/Input';
 
 const Welcome = ({ name, updateName, updateShowTodo }) => {
 
@@ -9,12 +11,12 @@ const Welcome = ({ name, updateName, updateShowTodo }) => {
 
   return (
     <div className="presentation">
-      <h1 className="presentation__welcome">
+      <Title>
         Welcome to your Todo List!
-      </h1>
+      </Title>
       <p className="presentation__text">Let's start!</p>
       <form onSubmit={handleWelcomeSubmit}>
-        <input type="text" placeholder="What is your name?" value={name} onChange={(e) => updateName(e.target.value)}/>
+        <Input placeholder="What is your name?" value={name} onChange={(e) => updateName(e.target.value)}/>
         <button>Start</button>
       </form>
     </div>
