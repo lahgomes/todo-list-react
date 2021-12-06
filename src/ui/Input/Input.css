@@ -20,7 +20,7 @@
 .list__form {
   display: flex;
   gap: 0.313rem;
-  margin-top: 1.25rem;
+  margin-top: 1rem;
 }
 
 .list__input {
@@ -53,6 +53,7 @@
 .list__button:hover {
   background-color: var(--light-purple);
   color: var(--white);
+  transform: scale(1.15);
 }
 
 .list__delete {
@@ -84,3 +85,4 @@
   text-decoration-thickness: 3px;
   text-decoration-color: var(--light-purple);
 }
+

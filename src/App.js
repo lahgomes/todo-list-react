@@ -22,7 +22,7 @@ function App() {
 
       {
         showTodo && 
-        <Todo name = {name} />
+        <Todo name={name} />
       }       
     </>
   );

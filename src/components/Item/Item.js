@@ -16,7 +16,7 @@ const Item = ({ item, items, index, setItems }) => {
     <label htmlFor={`item-${index}`}>
     {item}
     </label>
-    <button className="list__delete" onClick={() => handleDelete(index)}><i class="far fa-trash-alt"></i></button>
+    <button className="list__delete" onClick={() => handleDelete(index)}><i className="far fa-trash-alt"></i></button>
   </li>
 
   )
