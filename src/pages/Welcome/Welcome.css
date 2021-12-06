@@ -13,10 +13,6 @@
   padding: 0.938rem;
 }
 
-.presentation__welcome {
-  font-size: var(--text-presentation);
-}
-
 .presentation__text {
   font-size: var(--text-presentation);
 }

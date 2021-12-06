@@ -16,7 +16,7 @@ const Welcome = ({ name, updateName, updateShowTodo }) => {
         Welcome to your Todo List!
       </Title>
       <p className="presentation__text">Let's start!</p>
-      <form onSubmit={handleWelcomeSubmit}>
+      <form className="list__form" onSubmit={handleWelcomeSubmit}>
         <Input placeholder="What is your name?" value={name} onChange={(e) => updateName(e.target.value)}/>
         <button className="presentation__button"><i class="fas fa-play"/></button>
       </form>

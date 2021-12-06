@@ -29,6 +29,7 @@
   font-family: var(--primary-font);
   outline-color: var(--light-purple);
   padding-left: 0.5rem;
+  padding-right: 2.5rem;
 }
 
 .list__button {
