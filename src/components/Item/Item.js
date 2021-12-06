@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
+import './Item.css';
 
-const Item = ({ item }) => {
+const Item = ({ item, items, index, setItems }) => {
 
   const handleDelete = (index) => {
     const newItems = [...items]
@@ -10,17 +11,16 @@ const Item = ({ item }) => {
   }
 
   return (
-  <li>
-    <input type="checkbox" id={`item-${index}`}/>
+  <li className="list__item">
+    <input className="list__checkbox" type="checkbox" id={`item-${index}`}/>
     <label htmlFor={`item-${index}`}>
     {item}
     </label>
-    <button onClick={() => handleDelete(index)}>Delete</button>
+    <button className="list__delete" onClick={() => handleDelete(index)}><i class="far fa-trash-alt"></i></button>
   </li>
 
   )
 
 }
-
 
 export default Item

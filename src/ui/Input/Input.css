@@ -1,0 +1,85 @@
+.list {
+  background-color: var(--salmon);
+  border-radius: 0.313rem;
+  box-shadow: 5px 5px 8px rgb(105, 105, 105);
+  color: var(--white); 
+  padding: 0.938rem;
+  width: 20rem;
+} 
+
+@media (min-width: 768px) {
+  .list {
+    width: 30rem;
+  }
+}
+
+.list__title {
+  font-size: var(--title);
+}
+
+.list__form {
+  display: flex;
+  gap: 0.313rem;
+  margin-top: 1.25rem;
+}
+
+.list__input {
+  border: none;
+  flex: 2;
+  font-family: var(--primary-font);
+  outline-color: var(--light-purple);
+  padding-left: 0.5rem;
+}
+
+.list__button {
+  align-items: center;
+  background-color: var(--white);
+  border: none;
+  color: var(--salmon);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--primary-font);
+  font-size: var(--text-botton);
+  font-weight: var(--bold);
+  height: 2.188rem;
+  justify-content: center;
+  padding: 0.313rem;
+  text-transform: uppercase;
+  transition: 0.3s;
+  width: 2.75rem;
+}
+
+.list__button:hover {
+  background-color: var(--light-purple);
+  color: var(--white);
+}
+
+.list__delete {
+  background-color: transparent;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  font-size: var(--text);
+  height: 1.5rem;
+  padding: 0.20rem;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.875rem;
+}
+
+.list__delete:hover {
+  color: var(--light-purple);  
+}
+
+.list__checkbox {
+  accent-color: var(--light-purple);
+  cursor: pointer;
+}
+
+.list__checkbox:checked ~ label {
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  text-decoration-color: var(--light-purple);
+}

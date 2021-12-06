@@ -1,6 +1,7 @@
 import React from 'react'
 import Title from '../../ui/Title';
 import Input from '../../ui/Input';
+import './Welcome.css';
 
 const Welcome = ({ name, updateName, updateShowTodo }) => {
 
@@ -17,7 +18,7 @@ const Welcome = ({ name, updateName, updateShowTodo }) => {
       <p className="presentation__text">Let's start!</p>
       <form onSubmit={handleWelcomeSubmit}>
         <Input placeholder="What is your name?" value={name} onChange={(e) => updateName(e.target.value)}/>
-        <button>Start</button>
+        <button className="presentation__button"><i class="fas fa-play"/></button>
       </form>
     </div>
   )

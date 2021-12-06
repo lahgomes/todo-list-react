@@ -1,0 +1,12 @@
+.list__item {
+  background-color: #b458586f;
+  border: 0.5px solid white;
+  font-size: var(--text);
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;  
+}
+
+.list__item label {
+  cursor: pointer;
+}
