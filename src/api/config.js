@@ -1,8 +1,24 @@
 const connection = (url, config = {}) => {
-  const url = 'http://http://localhost:3005/${patch}'
+  const url = `http://localhost:3005/${patch}`
 
 
-  return fetch(url, config).then(resposta => resposta.json())
+  return fetch(url, {
+    ...config,
+    headers: {
+      ...config?.headers,
+      'Content-Type': 'application/json'
+    },
+
+  }).then(resposta => resposta.json())    
+    
 }
+
+const getItems = () => {}
+
+const addItem = () => {}
+
+const editItem = () => {}
+
+const deleteItem = () => {}
 
 export default connection

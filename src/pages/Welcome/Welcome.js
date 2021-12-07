@@ -5,7 +5,7 @@ import Input from '../../ui/Input';
 
 import './Welcome.css';
 
-import connect from '../../api/config'
+import { getUsers } from '../../api/users'
 
 const Welcome = ({ name, updateName, updateShowTodo }) => {
 
@@ -19,6 +19,8 @@ const Welcome = ({ name, updateName, updateShowTodo }) => {
      
       return
     }
+
+    getUsers.then(dados => console.log(dados))
 
     updateShowTodo(true) 
     
