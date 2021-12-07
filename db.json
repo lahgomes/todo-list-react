@@ -1,0 +1,9 @@
+{
+  "users": [
+    { "id": 1, "name": "lari" }
+  ],
+  "items": [
+    { "id": 1, "user": 1, "content": "fazer compras" }
+  ]
+  
+}

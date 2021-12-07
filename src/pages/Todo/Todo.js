@@ -42,7 +42,8 @@ const Todo = ({ name }) => {
         
       </form>
 
-      {messageError && <Error message='You forgot to add your task!'/>}
+      {messageError && 
+      <Error message='You forgot to add your task!'/>}
 
       <ul className="list__items">
         {
