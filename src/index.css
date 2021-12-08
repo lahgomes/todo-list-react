@@ -28,8 +28,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;	
 	font-family: 'Hind Siliguri', sans-serif;
+	line-height: 1;	
   align-items: center;
   background-position: center;
   background-repeat: no-repeat;

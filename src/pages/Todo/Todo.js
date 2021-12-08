@@ -4,7 +4,7 @@ import Input from '../../ui/Input';
 import Item from '../../components/Item';
 import Error from '../../components/Error';
 
-const Todo = ({ name }) => {
+const Todo = ({ user }) => {
   const [item, setItem] = React.useState('');
   const [items, setItems] = React.useState([]);
   const [messageError, setMessageError] = React.useState(false);
@@ -30,7 +30,7 @@ const Todo = ({ name }) => {
   return (
     <div className="list">
       <Title className="list__title">
-        {name}'s Todo List
+        {user.name}'s Todo List
       </Title>
               
       <form className="list__form" onSubmit={handleTodoSubmit}>
