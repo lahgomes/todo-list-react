@@ -15,24 +15,30 @@ const Welcome = ({ user, updateUser, updateShowTodo }) => {
 
   const welcomeInput = React.useRef(null)
 
-  const handleWelcomeSubmit = (e) => {
+  const handleWelcomeSubmit = async (e) => {
     e.preventDefault();
 
-    addUser(name).then(dados => {
-      updateUser({
-        ...dados
-      })
-    })
+    const users = await getUsers ()
 
-    updateShowTodo(true) 
+    const userFinded = users.find((user) => user.name === name)
+
+      if(userFinded) {
+        updateUser({ ...userFinded })
+      } else {
+        const dados = await addUser(name)
+        updateUser({ ...dados })
+      
+      }
+
+      updateShowTodo(true) 
     
     /* if (name === '') {
       welcomeInput.current.focus()
      
       return
     } */
-    
-  }
+
+  }  
 
   return (
     <div className="presentation">

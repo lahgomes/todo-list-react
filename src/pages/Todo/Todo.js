@@ -3,11 +3,19 @@ import Title from '../../ui/Title';
 import Input from '../../ui/Input';
 import Item from '../../components/Item';
 import Error from '../../components/Error';
+import { getItems } from '../../api/items';
 
 const Todo = ({ user }) => {
   const [item, setItem] = React.useState('');
   const [items, setItems] = React.useState([]);
   const [messageError, setMessageError] = React.useState(false);
+
+  React.useEffect(() => {
+   getItems(user.id).then((dados)=> {
+     if(dados) setItems([...items, ...dados])
+   })
+
+  }, [])
   
 
   const handleTodoSubmit = (e) => {
@@ -24,6 +32,14 @@ const Todo = ({ user }) => {
     setItems(newItems)
     setItem('')
     setMessageError(false)
+  }
+
+  const handleDelete = (id) => {
+    const newItems = [...items]
+    const index = newItems.findIndex(newItem => newItem.id === id)
+    newItems.splice(index, 1)
+
+    setItems(newItems)
   }
  
 
@@ -47,13 +63,14 @@ const Todo = ({ user }) => {
 
       <ul className="list__items">
         {
-          items.map((item, index) => (
+          items.map((item) => (
            <Item 
-            key={index}
-            item={item} 
+            key={item.id}
+            index={item.id}
+            item={item.content} 
             items={items} 
-            setItems={setItems} 
-            index={index}
+            setItems={setItems}             
+            handleDelete={handleDelete}
            />
           ))
         }
