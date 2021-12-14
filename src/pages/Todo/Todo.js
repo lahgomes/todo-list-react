@@ -3,7 +3,7 @@ import Title from '../../ui/Title';
 import Input from '../../ui/Input';
 import Item from '../../components/Item';
 import Error from '../../components/Error';
-import { getItems } from '../../api/items';
+import { getItems, addItem, deleteItem } from '../../api/items';
 
 const Todo = ({ user }) => {
   const [item, setItem] = React.useState('');
@@ -18,7 +18,7 @@ const Todo = ({ user }) => {
   }, [])
   
 
-  const handleTodoSubmit = (e) => {
+  const handleTodoSubmit = async (e) => {
     e.preventDefault();
 
     if (item === '') {
@@ -26,8 +26,9 @@ const Todo = ({ user }) => {
       return      
     }
 
-    const newItems = [...items]
-    newItems.push(item)
+    const newItems = [...items]  
+    const newItem = await addItem(user.id, { content: item });
+    newItems.push(newItem)
 
     setItems(newItems)
     setItem('')
@@ -36,10 +37,14 @@ const Todo = ({ user }) => {
 
   const handleDelete = (id) => {
     const newItems = [...items]
-    const index = newItems.findIndex(newItem => newItem.id === id)
-    newItems.splice(index, 1)
 
-    setItems(newItems)
+    deleteItem(id).then(() => {    
+      const index = newItems.findIndex(newItem => newItem.id === id)
+      newItems.splice(index, 1)
+
+      setItems(newItems)
+
+    })
   }
  
 
@@ -67,9 +72,7 @@ const Todo = ({ user }) => {
            <Item 
             key={item.id}
             index={item.id}
-            item={item.content} 
-            items={items} 
-            setItems={setItems}             
+            item={item.content}          
             handleDelete={handleDelete}
            />
           ))

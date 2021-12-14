@@ -1,14 +1,7 @@
 import React from 'react';
 import './Item.css';
 
-const Item = ({ item, items, index, setItems }) => {
-
-  const handleDelete = (index) => {
-    const newItems = [...items]
-    newItems.splice(index, 1)
-
-    setItems(newItems)
-  }
+const Item = ({ item, index, handleDelete}) => {
 
   return (
   <li className="list__item">

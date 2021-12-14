@@ -9,83 +9,39 @@
       "id": 2
     },
     {
-      "name": "Juliana",
+      "name": "oioio",
       "id": 3
     },
     {
-      "name": "iiiii",
+      "name": "Lari",
       "id": 4
-    },
-    {
-      "name": "yygg",
-      "id": 5
-    },
-    {
-      "name": "ooo",
-      "id": 6
-    },
-    {
-      "name": "ooo",
-      "id": 7
-    },
-    {
-      "name": "ooo",
-      "id": 8
-    },
-    {
-      "name": "ooo",
-      "id": 9
-    },
-    {
-      "name": "oioioio",
-      "id": 10
-    },
-    {
-      "name": "oioioio",
-      "id": 11
-    },
-    {
-      "name": "oioioio",
-      "id": 12
-    },
-    {
-      "name": {
-        "name": "ooooo"
-      },
-      "id": 13
-    },
-    {
-      "name": {
-        "name": "uuuuuu"
-      },
-      "id": 14
-    },
-    {
-      "name": "oooo",
-      "id": 15
-    },
-    {
-      "name": "ooo",
-      "id": 16
-    },
-    {
-      "name": "oi",
-      "id": 17
-    },
-    {
-      "name": "hhhhh",
-      "id": 18
-    },
-    {
-      "name": "llllllm",
-      "id": 19
     }
   ],
   "items": [
     {
       "id": 1,
-      "user": 1,
+      "userId": 1,
       "content": "fazer compras"
+    },
+    {
+      "userId": 3,
+      "content": "jjjjjj",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "content": "ir no mercado",
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "content": "comprar roupa",
+      "id": 4
+    },
+    {
+      "userId": 4,
+      "content": "fazer almoço",
+      "id": 5
     }
   ]
 }
