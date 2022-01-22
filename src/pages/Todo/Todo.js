@@ -12,10 +12,9 @@ const Todo = ({ user }) => {
 
   React.useEffect(() => {
    getItems(user.id).then((dados)=> {
-     if(dados) setItems([...items, ...dados])
+     if(dados) setItems((prevState) => [...prevState, ...dados])
    })
-
-  }, [])
+  }, [user.id])
   
 
   const handleTodoSubmit = async (e) => {

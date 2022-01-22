@@ -5,8 +5,6 @@ import Input from '../../ui/Input';
 
 import './Welcome.css';
 
-import connection from '../../api/config'
-
 import { addUser, getUsers } from '../../api/users'
 
 const Welcome = ({ user, updateUser, updateShowTodo }) => {
@@ -18,26 +16,27 @@ const Welcome = ({ user, updateUser, updateShowTodo }) => {
   const handleWelcomeSubmit = async (e) => {
     e.preventDefault();
 
-    const users = await getUsers ()
+    console.log(name)
 
-    const userFinded = users.find((user) => user.name === name)
+    const users = await getUsers()
 
-      if(userFinded) {
-        updateUser({ ...userFinded })
-      } else {
-        const dados = await addUser(name)
-        updateUser({ ...dados })
-      
-      }
+    console.log(users)
 
-      updateShowTodo(true) 
-    
-    /* if (name === '') {
-      welcomeInput.current.focus()
-     
+    const userFinded = users.find((user) => user.name === name)    
+
+    if(userFinded) {
+      updateUser({ ...userFinded })
+    } else {
+      const dados = await addUser(name)
+      updateUser({ ...dados })    
+    }
+
+    updateShowTodo(true) 
+  
+    if (name === '') {
+      welcomeInput.current.focus()     
       return
-    } */
-
+    }
   }  
 
   return (
