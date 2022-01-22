@@ -14,13 +14,9 @@ const Welcome = ({ user, updateUser, updateShowTodo }) => {
   const welcomeInput = React.useRef(null)
 
   const handleWelcomeSubmit = async (e) => {
-    e.preventDefault();
-
-    console.log(name)
+    e.preventDefault();    
 
     const users = await getUsers()
-
-    console.log(users)
 
     const userFinded = users.find((user) => user.name === name)    
 
